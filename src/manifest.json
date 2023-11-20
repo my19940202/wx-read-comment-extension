@@ -16,7 +16,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["http://*/*", "https://*/*", "<all_urls>"],
+      "matches": ["https://weread.qq.com/*"],
       "js": ["contentScript.bundle.js"],
       "css": ["content.styles.css"]
     }

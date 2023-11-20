@@ -1,5 +1,6 @@
 {
   "extends": "react-app",
+  "editor.tabSize": 4,
   "globals": {
     "chrome": "readonly"
   }

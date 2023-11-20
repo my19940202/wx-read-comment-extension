@@ -4,6 +4,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
+  "editor.detectIndentation": false,
   "prettier.eslintIntegration": true,
   "prettier.semi": false,
   "prettier.singleQuote": true
