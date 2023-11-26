@@ -5,10 +5,15 @@
 }
 .app .readerContent {
     width: 1000px;
+    position: relative;
 }
 .app .readerControls {
     margin-left: 0;
     left: 1020px;
+}
+.app .readerCatalog {
+    position: absolute;
+    right: 0;
 }
 .chrex-comment-wrapper {
     flex: 1;
