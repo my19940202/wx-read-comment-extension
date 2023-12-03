@@ -4,7 +4,13 @@
 ## 一期效果
 请求微信评论接口数据，侧边栏渲染评论数据，支持评论引用原文的展开和收起
 <img src="./src/assets/img/preview.jpg">
-<b>使用方法: 将当前目录下的build.zip下载后，在&nbsp;chrome://extensions/&nbsp; 页面导入安装插件</b>
+使用方法: 
+<ol>
+    <li>
+        下载<a href="https://github.com/my19940202/wx-read-comment-extension/raw/main/build.zip">build.zip</a>
+    </li>
+    <li>在&nbsp;chrome://extensions/&nbsp; 页面导入安装插件</li>
+</ol>
 <img src="./src/assets/img/tutorial.jpg">
 
 ## 二期效果,近期期待
