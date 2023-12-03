@@ -49,3 +49,12 @@ export function getFormattedDate(timestamp: number) {
 
     return year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second;
 }
+
+export const backgroundLog = (data, callback) => {
+    // 微信读书页面禁止调试, 后台发送消息查看数据
+    chrome.runtime.sendMessage(data, (response) => {
+        if (callback) {
+            callback(response);
+        }
+    });
+};

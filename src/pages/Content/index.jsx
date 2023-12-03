@@ -2,7 +2,7 @@
 import React from 'react';
 import {createRoot} from 'react-dom/client';
 import Comment from './Comment';
-import {genCommetUrl} from './utils';
+import {genCommetUrl, backgroundLog} from './utils';
 import './content.styles.css';
 
 window.addEventListener('load', (event) => {
@@ -12,8 +12,9 @@ window.addEventListener('load', (event) => {
     const wrapper = document.createElement('div');
     const appDom = document.getElementById('app');
     wrapper.className = 'chrex-comment-wrapper';
-    const height = document.documentElement.clientHeight;
-    wrapper.style = `height: ${height}px`;
+    const {clientHeight: height, clientWidth: width} = document.documentElement;
+    const commentWidth = Math.round(width - 1000 - 100);
+    wrapper.style = `height: ${height}px;width: ${commentWidth}px;`;
 
     appDom.append(wrapper);
 
@@ -29,17 +30,12 @@ window.addEventListener('load', (event) => {
                     return item && item.review;
                 })
             }
+            const props = {list: commentList, width: commentWidth};
 
             const root = createRoot(wrapper);
-            root.render(<Comment list={commentList} />);
-
-            // 微信读书页面禁止调试, 后台发送消息查看数据
-            chrome.runtime.sendMessage({reqUrl, commentList}, (response) => {
-                if (callback) {
-                    callback(response);
-                }
-            });
+            root.render(<Comment {...props} />);
         })  
         .catch(error => console.error('Error:', error));
     }
+    backgroundLog('backgroundLog', backgroundLog);
 });
