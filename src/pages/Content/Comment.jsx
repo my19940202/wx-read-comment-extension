@@ -3,13 +3,12 @@ import {getFormattedDate, backgroundLog} from './utils';
 
 const Comment = props => {
     const {list = [], width} = props;
-
+    const wechatUrl = 'https://636c-cloud1-5g5eyjtze161c202-1319072486.tcb.qcloud.la/dev/wechat-qr-code.jpg';
     const lineClass = new Array(list.length || 0).fill('comment-item-abstract one-line');
     const [line, setLine] = useState(lineClass);
     const toggleAbstract = useCallback((e) => {
         const idx = e.target.dataset.key;
         line[idx] = line[idx].includes('one-line') ? 'comment-item-abstract' : 'comment-item-abstract one-line';
-        backgroundLog({idx, line});
         setLine(line.concat([]));
     }, []);
 
@@ -40,6 +39,16 @@ const Comment = props => {
                     </div>
                 )
             })}
+            {list.length > 3 && (
+                <div className='wechat-reward'>
+                    <p>
+                        <a href="https://github.com/my19940202/wx-read-comment-extension" target='_blank'>
+                            开发不易，求打赏和支持star
+                        </a>
+                    </p>
+                    <img src={wechatUrl} />
+                </div>
+            )}
         </div>
     )
     return (
