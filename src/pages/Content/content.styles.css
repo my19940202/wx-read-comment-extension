@@ -98,3 +98,11 @@
     white-space: nowrap;
     overflow: hidden;
 }
+.wechat-reward {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 22px;
+}
+.wechat-reward img {
+    width: 200px;
+}

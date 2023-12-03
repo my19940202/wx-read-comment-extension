@@ -1,4 +1,14 @@
 // util工具函数
+
+export const backgroundLog = (data, callback) => {
+    // 微信读书页面禁止调试, 后台发送消息查看数据
+    chrome.runtime.sendMessage(data, (response) => {
+        if (callback) {
+            callback(response);
+        }
+    });
+};
+
 // 生成评论请求url
 // https://weread.qq.com/web/review/list?bookId=3300025096&chapterUid=12&listType=8
 export const genCommetUrl = () => {
@@ -7,9 +17,10 @@ export const genCommetUrl = () => {
         listType: 8 // 默认listType 不清楚含义
     };
     // 从书籍的封面图获取bookId: https://cdn.weread.qq.com/weread/cover/96/3300025096/t6_3300025096.jpg
+    // https://cdn.weread.qq.com/weread/cover/17/YueWen_23656825701619404/t6_YueWen_23656825701619404.jpg
     const coverImage = document.querySelector('img.wr_bookCover_img') as HTMLImageElement;
     if (coverImage && coverImage.src) {
-        const bookId = coverImage.src.match(/\/\d{5,}\//);
+        const bookId = coverImage.src.match(/\d{5,}/);
         if (bookId && bookId[0]) {
             params = {
                 ...params,
@@ -28,7 +39,6 @@ export const genCommetUrl = () => {
             break;
         }
     }
-
     if (params.bookId && params.chapterUid) {
         let queryObj = new URLSearchParams(params);
         url = `https://weread.qq.com/web/review/list?${queryObj.toString()}`;
@@ -49,15 +59,6 @@ export function getFormattedDate(timestamp: number) {
 
     return year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second;
 }
-
-export const backgroundLog = (data, callback) => {
-    // 微信读书页面禁止调试, 后台发送消息查看数据
-    chrome.runtime.sendMessage(data, (response) => {
-        if (callback) {
-            callback(response);
-        }
-    });
-};
 
 export const getCommentData = async () => {
     const url = genCommetUrl();
