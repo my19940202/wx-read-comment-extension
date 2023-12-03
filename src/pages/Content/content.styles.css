@@ -18,8 +18,70 @@
 .chrex-comment-wrapper {
     flex: 1;
     margin-left: 80px;
-    height: 100%;
     position: relative;
-    background-color: azure;
+    color: #FFF;
+    font-size: 18px;
+    overflow: hidden;
+}
+.wr_whiteTheme .chrex-comment-wrapper {
+    background-color: #FFF;
     color: #000;
+}
+.comment-react-wrapper {
+    position: fixed;
+    height: 100%;
+    padding: 30px 20px;
+    overflow: scroll;
+}
+.comment-header {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.comment-react-wrapper .comment-item {
+    background: rgba(240,240,242,.1);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+.comment-react-wrapper .comment-item .comment-item-title {
+    display: flex;
+    align-items: center;
+}
+
+.comment-react-wrapper .comment-item .comment-item-title .avatar {
+    width: 20px;
+    height: 20px;
+}
+.comment-react-wrapper .comment-item .comment-item-title .avatar {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,.1);
+}
+.comment-react-wrapper .comment-item .comment-item-title .name,
+.comment-react-wrapper .comment-item .comment-item-title .time {
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 6px;
+    line-height: 20px;
+    color: #a0a0a2;
+}
+.comment-react-wrapper .comment-item .comment-item-content {
+    margin-top: 8px;
+    line-height: 25px;
+    font-size: 16px;
+    text-align: justify;
+    color: #fff;
+}
+.comment-react-wrapper .comment-item .comment-item-abstract {
+    margin-top: 8px;
+    line-height: 25px;
+    font-size: 12px;
+    text-align: justify;
+    color: #ddd;
 }
