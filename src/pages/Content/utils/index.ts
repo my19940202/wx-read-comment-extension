@@ -58,3 +58,19 @@ export const backgroundLog = (data, callback) => {
         }
     });
 };
+
+export const getCommentData = async () => {
+    const url = genCommetUrl();
+    if (url) {
+        const response = await fetch(url);
+        const data = await response.json();
+        // 数据格式化
+        let commentList = [];
+        if (data && data.reviews) {
+            commentList = data.reviews.map(item => {
+                return item && item.review;
+            })
+        }
+        return commentList;
+    }
+};

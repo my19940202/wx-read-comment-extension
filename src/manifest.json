@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "wxread-comment-chrome-extension",
-  "description": "A chrome extension show comment on WeChat Read",
+  "description": "微信读书评论插件,A chrome extension show comment on WeChat Read",
   "options_page": "options.html",
   "background": { "service_worker": "background.bundle.js" },
   "action": {

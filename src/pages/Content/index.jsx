@@ -2,12 +2,12 @@
 import React from 'react';
 import {createRoot} from 'react-dom/client';
 import Comment from './Comment';
-import {genCommetUrl, backgroundLog} from './utils';
+import {backgroundLog, getCommentData} from './utils';
 import './content.styles.css';
 
-window.addEventListener('load', (event) => {
-    const reqUrl = genCommetUrl();
+let root;
 
+window.addEventListener('load', async () => {
     // 修改页面结构显示评论dom
     const wrapper = document.createElement('div');
     const appDom = document.getElementById('app');
@@ -18,24 +18,31 @@ window.addEventListener('load', (event) => {
 
     appDom.append(wrapper);
 
-    // 请求评论数据
-    if (reqUrl) {
-        fetch(reqUrl)
-        .then(response => response.json())  
-        .then(data => {
-            // 数据格式化
-            let commentList = [];
-            if (data && data.reviews) {
-                commentList = data.reviews.map(item => {
-                    return item && item.review;
-                })
-            }
-            const props = {list: commentList, width: commentWidth};
-
-            const root = createRoot(wrapper);
-            root.render(<Comment {...props} />);
-        })  
-        .catch(error => console.error('Error:', error));
-    }
+    // 首次页面加载 渲染评论
+    let commentList = await getCommentData();
+    const props = {list: commentList, width: commentWidth};
+    root = createRoot(wrapper);
+    root.render(<Comment {...props} />);
     backgroundLog('backgroundLog', backgroundLog);
+
+    // 监控标题变化(针对切换章节和点击上下一章)重新渲染评论
+    const chapterNode = document.querySelector('.readerTopBar_title_chapter');
+    const observer = new MutationObserver(async (mutationsList, observer) => {
+        backgroundLog({data: 'aaaa'});
+        for(let mutation of mutationsList) {
+            if (mutation.type === 'characterData') {
+                let commentList = await getCommentData();
+                const props = {list: commentList, width: commentWidth};
+                root = createRoot(wrapper);
+                root.render(<Comment {...props} />);
+            }
+        }
+    });
+    observer.observe(chapterNode, {
+        attributes: true,
+        childList: true,
+        characterData: true,
+        subtree: true
+    });
 });
+
