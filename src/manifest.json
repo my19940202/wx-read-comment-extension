@@ -6,6 +6,12 @@
   "icons": {
     "128": "wxread-icon.png"
   },
+  "permissions": [
+    "webRequest"
+  ],
+  "host_permissions": [
+    "https://weread.qq.com/*"
+  ],
   "content_scripts": [
     {
       "matches": ["https://weread.qq.com/web/reader/*"],

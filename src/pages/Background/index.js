@@ -1,8 +1,19 @@
-console.log('This is the background page.');
-console.log('Put the background scripts here.');
-
-chrome.runtime.onMessage.addListener((request, render, sendResponse) => {
-    console.log("onMessage", request);
-    sendResponse("reslut");
-    return true; // 重点是这一个 返回true：允许返回异步消息
+// 通过监控network请求，从请求中截取bookId
+let bookId = '';
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    console.log(message);
+    if (message === 'getBookId') {
+        sendResponse(bookId);
+    }
 });
+
+chrome.webRequest.onCompleted.addListener(function(details) {
+    console.log('details.urldetails.url', details.url);
+    // https://weread.qq.com/web/review/list?bookId=3300024003&listType=3&maxIdx=0&count=3&listMode=2&synckey=0
+    if (details && details.url && details.url.includes('bookId=')) {
+        let urlParams = new URLSearchParams(details.url.split('?')[1]);
+        urlParams.get('bookId') && (bookId = urlParams.get('bookId'));
+        console.log(details.url, 'bookId', bookId);
+    }
+  }, {urls: ["https://weread.qq.com/*"]});
+
