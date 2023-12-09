@@ -8,7 +8,7 @@
 使用方法: 
 <ol>
     <li>
-        下载<a href="https://github.com/my19940202/wx-read-comment-extension/raw/main/build.zip">build.zip</a>
+        下载<a href="https://github.com/my19940202/wx-read-comment-extension/raw/main/微信读书评论-1.0.0.zip">微信读书评论-1.0.0.zip</a>
     </li>
     <li>在&nbsp;chrome://extensions/&nbsp; 页面导入安装插件</li>
 </ol>

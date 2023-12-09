@@ -12,7 +12,7 @@ export const getBookIdFormNetwork = () => {
 };
 
 // 微信读书页面禁止调试, 后台发送消息查看数据
-export const backgroundLog = data => {
+export const backgroundLog = (data: any) => {
     chrome.runtime.sendMessage(data);
 };
 
@@ -86,7 +86,7 @@ export const getCommentData = async () => {
         // 数据格式化
         let commentList = [];
         if (data && data.reviews) {
-            commentList = data.reviews.map(item => {
+            commentList = data.reviews.map((item: any) => {
                 return item && item.review;
             })
         }
