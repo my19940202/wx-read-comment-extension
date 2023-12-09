@@ -3,7 +3,8 @@
 
 ## 一期效果
 请求微信评论接口数据，侧边栏渲染评论数据，支持评论引用原文的展开和收起
-<img src="./src/assets/img/preview.jpg">
+<img src="./src/assets/img/preview-day.jpg">
+<img src="./src/assets/img/preview-night.jpg">
 使用方法: 
 <ol>
     <li>

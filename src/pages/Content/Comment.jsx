@@ -12,8 +12,12 @@ const Comment = props => {
         setLine(line.concat([]));
     }, []);
 
+    const reloadPage = useCallback(() => {
+        window.location.reload();
+    }, []);
+
     const emptyTip = (
-        <h1>暂时没有获取到评论</h1>
+        <h1 onClick={reloadPage}>暂时获取不到评论，点击重新载入评论</h1>
     );
 
     const commentList = (

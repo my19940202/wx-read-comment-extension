@@ -23,8 +23,22 @@
     font-size: 18px;
     overflow: hidden;
 }
+.chrex-comment-wrapper h1 {
+    cursor: pointer;
+}
+/* 日间浅色模式 */
 .wr_whiteTheme .chrex-comment-wrapper {
-    background-color: #FFF;
+    background-color: #f6f7f9;
+    color: #000;
+}
+.wr_whiteTheme .comment-react-wrapper .comment-item {
+    background: rgba(13,20,30,.04);
+}
+.wr_whiteTheme .comment-react-wrapper .comment-item .comment-item-abstract,
+.wr_whiteTheme .comment-react-wrapper .comment-item .comment-item-title .name {
+    color: #717882;
+}
+.wr_whiteTheme .comment-react-wrapper .comment-item .comment-item-content {
     color: #000;
 }
 .comment-react-wrapper {
