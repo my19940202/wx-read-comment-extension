@@ -20,10 +20,12 @@ const Comment = props => {
         <h1 onClick={reloadPage}>暂时获取不到评论，点击重新载入评论</h1>
     );
 
+    const chapterTitle = list[0] && list[0].chapterTitle || '当前';
+
     const commentList = (
         <div style={{width: width - 40}}>
             <div className='comment-header'>
-                <h1>获取{list.length}条评论</h1>
+                <h1>{chapterTitle}共有{list.length}条评论</h1>
             </div>
             {list.map((item, idx) => {
                 const author = item.author || {};
