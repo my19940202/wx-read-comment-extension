@@ -52,6 +52,15 @@
     font-size: 20px;
     margin-bottom: 20px;
 }
+.github-bar {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.github-bar img {
+    padding-left: 20px;
+    width: 20px;
+    height: 20px;
+}
 .comment-react-wrapper .comment-item {
     width: 100%;
     background: rgba(240,240,242,.1);
@@ -114,9 +123,6 @@
 }
 .wechat-reward {
     text-align: center;
-    padding: 20px 0;
+    padding: 10px 0;
     font-size: 22px;
-}
-.wechat-reward img {
-    width: 200px;
 }

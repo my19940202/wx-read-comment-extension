@@ -29,8 +29,6 @@ export function safeParseJSON(str: string) {
 // 生成评论请求url
 // https://weread.qq.com/web/review/list?bookId=3300025096&chapterUid=12&listType=8
 export const genCommetUrl = () => {
-    console.log('params', params);
-    
     let url = '';
     // v1：从书籍的封面图获取bookId:
     // https://cdn.weread.qq.com/weread/cover/96/3300025096/t6_3300025096.jpg
@@ -90,6 +88,7 @@ export const getCommentData = async () => {
                 return item && item.review;
             })
         }
+        backgroundLog(commentList);
         return commentList;
     }
 };

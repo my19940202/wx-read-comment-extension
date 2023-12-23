@@ -13,6 +13,7 @@ window.addEventListener('load', async () => {
     // 1.修改页面结构显示评论dom
     const wrapper = document.createElement('div');
     const appDom = document.getElementById('app');
+    const isDark = !document.body.classList.contains('wr_whiteTheme');
     wrapper.className = 'chrex-comment-wrapper';
     const {clientHeight: height, clientWidth: width} = document.documentElement;
     const commentWidth = Math.round(width - 1000 - 100);
@@ -21,7 +22,7 @@ window.addEventListener('load', async () => {
 
     // 2.首次页面加载 渲染评论
     let commentList = await getCommentData();
-    const props = {list: commentList, width: commentWidth};
+    const props = {list: commentList, width: commentWidth, isDark};
     root = createRoot(wrapper);
     root.render(<Comment {...props} />);
 
