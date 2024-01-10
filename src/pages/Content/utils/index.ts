@@ -46,10 +46,10 @@ export const genCommetUrl = () => {
 
     // 获取chapterUid: 通过解析readerCatalog_list 解析出当前文章在第几节
     // TODO: 需要关注有些章节是层级的 需要调整一下计算方法, 目前这个chapterUid 在某些长篇小说里面不准确
-    const catalogList = document.querySelectorAll('li.chapterItem');
+    const catalogList = document.querySelectorAll('li.readerCatalog_list_item');
     for (let idx = 0; idx < catalogList.length; idx++) {
         const ele = catalogList[idx];
-        if (ele.classList.contains('chapterItem_current')) {
+        if (ele.classList.contains('readerCatalog_list_item_selected')) {
             params.chapterUid = 2 + idx;
             break;
         }
