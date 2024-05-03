@@ -19,5 +19,6 @@
 2. 显示评论的回复
 3. 支持点赞和发表评论
 
-## 开发不易，求打赏
-<img style="width:200px;" src="https://636c-cloud1-5g5eyjtze161c202-1319072486.tcb.qcloud.la/dev/wechat-qr-code.jpg">
+## 产品改进建议沟通
+<img width="200" src="./src/assets/img/qq-qun.jpg">
+<img width="200" src="./src/assets/img/wx-qrcode.jpg">
