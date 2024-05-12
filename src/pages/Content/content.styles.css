@@ -26,6 +26,7 @@
 .chrex-comment-wrapper h1 {
     cursor: pointer;
 }
+
 /* 日间浅色模式 */
 .wr_whiteTheme .chrex-comment-wrapper {
     background-color: #f6f7f9;
@@ -52,6 +53,18 @@
     font-size: 20px;
     margin-bottom: 20px;
 }
+.comment-header button {
+    color: #FFF;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 14px;
+}
+.wr_whiteTheme .comment-react-wrapper .comment-header button {
+    color: #000;
+    border: 1px solid #000;
+}
+
 .github-bar {
     text-align: center;
     margin-bottom: 10px;

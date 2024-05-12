@@ -1,23 +1,26 @@
-import React, {useState, useCallback} from 'react';  
-import {getFormattedDate, backgroundLog} from './utils';
+import React, {useState, useCallback} from 'react';
+import {getFormattedDate, backgroundLog, getCommentData} from './utils';
 
 const Comment = props => {
-    const {list = [], width, isDark} = props;
+    const {list = [], width, isDark, params} = props;
     const githubUrl = `https://636c-cloud1-5g5eyjtze161c202-1319072486.tcb.qcloud.la/dev/github-${isDark ? 'white' : 'black'}.png`;
     const lineClass = new Array(list.length || 0).fill('comment-item-abstract one-line');
     const [line, setLine] = useState(lineClass);
+    const [commentData, setCommentData] = useState(list);
     const toggleAbstract = useCallback((e) => {
         const idx = e.target.dataset.key;
-        line[idx] = line[idx].includes('one-line') ? 'comment-item-abstract' : 'comment-item-abstract one-line';
+        line[idx] = line[idx].includes('one-line')
+            ? 'comment-item-abstract' : 'comment-item-abstract one-line';
         setLine(line.concat([]));
     }, []);
 
-    const reloadPage = useCallback(() => {
-        window.location.reload();
+    const reloadCommnet = useCallback(async (type) => {
+        const data = await getCommentData(params, type);
+        setCommentData(data);
     }, []);
 
     const emptyTip = (
-        <h1 onClick={reloadPage}>部分书籍无法获取评论 待升级支持</h1>
+        <h1 onClick={reloadCommnet}>点击刷新评论数据</h1>
     );
 
     const chapterTitle = list[0] && list[0].chapterTitle || '当前';
@@ -32,11 +35,13 @@ const Comment = props => {
                     </a>
                 </div>
                 <h1>{chapterTitle}共有{list.length}条评论</h1>
+                {/* <button onClick={e => reloadCommnet()}>上一章</button>
+                <button onClick={e => reloadCommnet()}>下一章</button> */}
             </div>
-            {list.map((item, idx) => {
+            {commentData.map((item, idx) => {
                 const author = item.author || {};
                 const createTime = getFormattedDate(item.createTime * 1000);
-                const abstract = '对应原文:&nbsp;' + item.abstract;
+                const abstract = '点击展开评论段落:&nbsp;' + (item.abstract || '').replace('\n', '<br/>');
                 return (
                     <div className='comment-item' key={idx}>
                         <div className='comment-item-title'>
