@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "wxread-comment-chrome-extension",
-  "description": "微信读书评论插件,让支持微信读书PC页面显示评论。A chrome extension show comment on WeChat Read",
+  "name": "微信读书评论插件",
+  "description": "微信读书评论插件,让支持微信读书PC页面显示评论。A chrome extension show comment on pc WeChatRead",
   "background": { "service_worker": "background.bundle.js" },
   "icons": {
     "128": "wxread-icon.png"

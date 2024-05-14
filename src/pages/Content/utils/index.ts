@@ -1,6 +1,6 @@
 // util工具函数
 
-export const getBookIdFormNetwork = (params) => {
+export const getBookIdFormNetwork = (params: any) => {
     let idx = 0;
     const timer = setInterval(() => {
         backgroundLog({type: 'getBookIdFormNetwork', idx});

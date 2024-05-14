@@ -1,6 +1,6 @@
 {
   "name": "wxread-comment-chrome-extension",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A chrome extension show comment on WeChat Read",
   "license": "MIT",
   "repository": {
@@ -8,7 +8,7 @@
     "url": "https://github.com/my19940202/wx-read-comment-extension"
   },
   "scripts": {
-    "build": "node utils/build.js",
+    "build": "NODE_ENV=production node utils/build.js",
     "start": "node utils/webserver.js",
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,json,css,scss,md}'"
   },
