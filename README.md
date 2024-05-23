@@ -4,7 +4,7 @@ A chrome extension show comment for weread.qq.com <br/>
 
 目前已发布到插件商店,可以直接安装
 - [Chrome插件商店](https://chromewebstore.google.com/detail/kfjimgaoegibikoojcbnkbffkongnoep)
-- Edge插件商店(敬请期待)
+- [Edge插件商店](https://microsoftedge.microsoft.com/addons/detail/%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6%E8%AF%84%E8%AE%BA%E6%8F%92%E4%BB%B6/dpihhfdnbndfhonhkbnnhojbnaeedabc)
 
 ## 效果预览
 请求微信评论接口数据，侧边栏渲染评论数据，支持评论引用原文的展开和收起
