@@ -1,5 +1,5 @@
-# 微信读书-评论插件
-A chrome extension show comment for weread.qq.com <br/>
+# 微信读书评论插件-适用于PC浏览器
+A chrome extension show comments for weread.qq.com <br/>
 一个让网页微信读书页面显示评论的插件，了解他人的见解，解答阅读中的困惑, 不做一个孤独的阅读者。
 
 目前已发布到插件商店,可以直接安装
