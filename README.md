@@ -27,3 +27,6 @@ A chrome extension show comments for weread.qq.com <br/>
 
 ## 产品改进建议沟通
 <img width="200" src="./src/assets/img/wx-qrcode.jpg">
+
+## 赞助
+[![Powered by DartNode](https://dartnode.com/branding/DN-Open-Source-sm.png)](https://dartnode.com "Powered by DartNode - Free VPS for Open Source")
